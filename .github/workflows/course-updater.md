@@ -39,7 +39,7 @@ Look for:
 
 ## Step 2 — Compare against the current course content and existing PRs
 
-This course targets beginners so only include content changes that would cater to that audience. For example, if a new feature is advanced, marked as experimental, or doesn't qualify as a "beginner" level feature, don't include it in the course content since we don't want to overwhelm learners. Determine what is most relevant and helpful for beginners learning about the Copilot CLI. Ignore experimental features.
+This course targets beginners, so only include content changes that cater to that audience. For example, if a new feature is advanced, marked as experimental, or otherwise doesn't qualify as a "beginner" level feature, don't include it in the course content since we don't want to overwhelm learners. Determine what is most relevant and helpful for beginners learning about the Copilot CLI.
 
 Read all of the readme files in the repo and compare the features documented there against what you found in Step 1. Also check existing pull requests to see if any updates are already in progress. DO NOT duplicate efforts if an update has already been proposed in an open PR.
 Identify:
