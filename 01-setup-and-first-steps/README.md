@@ -363,7 +363,7 @@ copilot --allow-all -p "Review @myfile.py for issues"
 
 ## Essential Slash Commands
 
-These commands work in interactive mode. **Start with just these seven** - they cover 90% of daily use:
+These commands work in interactive mode. **Start with just these** - they cover 90% of daily use:
 
 | Command | What It Does | When to Use |
 |---------|--------------|-------------|
