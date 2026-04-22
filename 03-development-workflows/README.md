@@ -736,6 +736,11 @@ copilot
 > - Case-insensitive matching
 > - Author name not found
 
+# You can generate a commit message in interactive mode or programmatic mode
+# Exit the interactive session and do it using `copilot -p`
+
+> /exit
+
 # 4. Generate commit message
 copilot -p "Generate commit message for: $(git diff --staged)"
 
