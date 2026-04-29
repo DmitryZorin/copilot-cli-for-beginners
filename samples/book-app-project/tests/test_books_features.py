@@ -62,5 +62,5 @@ def test_corrupt_backup_has_timezone(tmp_path):
 
 
 def test_locking_available():
-    # ensure at least one locking backend is available
-    assert books_mod._HAS_FILELOCK or books_mod._HAS_FCNTL
+    # ensure POSIX flock is available in this environment
+    assert books_mod._HAS_FCNTL
