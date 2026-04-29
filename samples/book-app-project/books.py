@@ -114,7 +114,8 @@ class BookCollection:
     """
 
     def __init__(self, data_file: Optional[str] = None):
-        self.data_file: Path = Path(data_file) if data_file else DATA_FILE
+        # Ensure data_file is always a Path regardless of how DATA_FILE is patched in tests
+        self.data_file: Path = Path(data_file) if data_file is not None else Path(DATA_FILE)
         self._lock_file: Path = self.data_file.with_suffix(self.data_file.suffix + ".lock")
         self.books: List[Book] = []
         self._in_batch = False
