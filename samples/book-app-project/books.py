@@ -25,13 +25,6 @@ from pathlib import Path
 from typing import List, Optional, Iterator, ContextManager, Iterable
 import difflib
 
-# Try to use filelock (cross-platform). If unavailable, fall back to POSIX fcntl locking.
-try:
-    from filelock import FileLock as _FileLockLib  # type: ignore
-    _HAS_FILELOCK = True
-except Exception:
-    _HAS_FILELOCK = False
-
 try:
     import fcntl
     _HAS_FCNTL = True
@@ -126,10 +119,8 @@ class _FlockFallback:
 def _choose_lock(lock_path: Path, exclusive: bool = True) -> ContextManager:
     """Return a context manager implementing file locking.
 
-    Prefers filelock if installed; falls back to POSIX flock when available; otherwise no-op.
+    Uses POSIX flock when available; otherwise no-op.
     """
-    if _HAS_FILELOCK:
-        return _FileLockLib(str(lock_path), timeout=10)
     if _HAS_FCNTL:
         return _FlockFallback(lock_path, exclusive=exclusive)
     # no-op context manager
