@@ -29,10 +29,32 @@ def get_user_choice() -> str:
 
 
 def get_book_details():
-    """Prompt for book details and validate non-empty title and author.
+    """Prompt interactively for book details and validate inputs.
 
-    Keeps asking until both title and author are non-empty. Year is parsed to
-    int and defaults to 0 on invalid input.
+    The function repeatedly prompts the user for book information until valid
+    values are provided for required fields. It performs simple parsing and
+    fallback handling for the publication year.
+
+    Side effects:
+    - Reads from standard input using input().
+    - Prints validation prompts or error messages to standard output.
+
+    Parameters:
+    - None. This is an interactive helper — it reads user input directly.
+
+    Returns:
+    - tuple[str, str, int]: A tuple containing (title, author, year), where
+      title and author are non-empty trimmed strings, and year is an integer
+      (defaults to 0 when the user omits or provides an invalid year).
+
+    Example:
+        title, author, year = get_book_details()
+
+    Notes:
+    - Title and author are required and the prompt repeats until non-empty
+      values are provided.
+    - Year is optional; if the user enters an empty value or an invalid
+      integer, the function returns 0 for the year.
     """
     while True:
         title = input("Enter book title: ").strip()
